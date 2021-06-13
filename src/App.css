@@ -1,5 +1,10 @@
-.App {
-    color: cornsilk;
-    background-color: black;
-    padding: 20px;
-}
+    .titleInicio {
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+        font-family: serif;
+        font-style: italic;
+        background-color: rgb(108, 159, 175);
+        color: cornsilk;
+        border: grey;
+    }
