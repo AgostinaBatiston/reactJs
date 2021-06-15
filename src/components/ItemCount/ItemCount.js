@@ -14,8 +14,8 @@ export default class ItemCount extends Component {
     render() {
         return (
 
-            <div>
-                
+            <div className="btn-count">
+                {this.state.count}
             </div>
         )
     }

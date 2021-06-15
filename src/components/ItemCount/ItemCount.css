@@ -1,0 +1,6 @@
+.btn-count {
+    font-size: 20px;
+    display: flex;
+    justify-content: left;
+    color: brown;
+}
