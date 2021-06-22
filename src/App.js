@@ -3,6 +3,7 @@ import './App.css'
 import Home from "./views/home";
 import About from "./views/about";
 import Navbar from './components/Navbar/Navbar';
+import Header from './components/Header/Header';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
@@ -13,8 +14,9 @@ class App extends Component {
         return (
           <Router>
           <div className="App">
+            <Header />
             <Navbar />
-            <h1 className='titleInicio'>Libreria uzumaki</h1>
+            
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" component={About} />

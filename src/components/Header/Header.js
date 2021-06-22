@@ -1,27 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react';
 import './Header.css';
-import CartWidget from '../CartWidget/CartWidget';
-
-export default class Header extends Component {
-    render() {
-        return (
-            
-            <nav class="ui pointing menu">    
-        
-                    <a class="item" className='BtnInicio' href="#">
-                        <h2>
-                        Libreria Uzumaki
-                        </h2>  
-                    </a>
-                    <a class="item">Quienes somos</a>
-                    <a class="item">
-                        Tienda
-                    </a>
-                    
-                    <CartWidget/>
+import { Images } from "../../utils/images.js";
+import { Link } from "react-router-dom";
 
 
-            </nav>
-        )
-    }
+function Header() {
+	return (
+		<div className='Header'>
+			
+			<Link to="/" className="logo">
+                <img src={Images.Logo} alt="logo" className="logoImg"/>
+				
+            </Link>
+			<h1 className='titleInicio'>Libreria uzumaki</h1>
+		</div>
+	);
 }
+
+export default Header;
