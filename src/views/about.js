@@ -1,7 +1,10 @@
+import React from 'react'
+import './views.css';
+
 function About() {
     return (
       <div>
-        <h1>ABOUT</h1>
+        <h1 className="titleInicio">ABOUT</h1>
       </div>
     );
   }

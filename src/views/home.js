@@ -1,10 +1,11 @@
 import React from 'react'
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
+import './views.css';
 
 function Home() {
     return (
       <div>
-        <h1>HOME</h1>
+        <h1 className="titleInicio">HOME</h1>
         <ItemListContainer />
       </div>
     );

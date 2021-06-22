@@ -12,7 +12,7 @@ function Header() {
                 <img src={Images.Logo} alt="logo" className="logoImg"/>
 				
             </Link>
-			<h1 className='titleInicio'>Libreria uzumaki</h1>
+			<h1 className='titleLogo'>Libreria uzumaki</h1>
 		</div>
 	);
 }

@@ -1,0 +1,6 @@
+.titleInicio {
+    display: flex;
+    justify-content: center;
+    font-family: serif;
+    color: rgb(100, 0, 0);
+}
