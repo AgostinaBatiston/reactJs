@@ -1,5 +1,19 @@
-.BtnInicio {
-    background-color: darkcyan;
-    color: whitesmoke;
-    padding: 10px 25px 10px 25px;
+.Navbar {
+    display: flex;
+    background: #000;
+    min-height: 5vh;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.Link {
+    padding: 0px 10px 0px 10px;
+    font-size: 30px;
+    color: white;
+    list-style-type: none;
 }

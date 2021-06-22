@@ -1,27 +1,45 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Navbar.css';
+
 import CartWidget from '../CartWidget/CartWidget';
+import { Images } from "../../utils/images.js";
+import { Link } from "react-router-dom";
 
-export default class Navbar extends Component {
-    render() {
-        return (
-            
-            <nav class="ui pointing menu">    
+const Navbar = () => {
+    return (
+      
+      <nav className="Navbar">
+        <Link to="/" className="logo">
+        <img src={Images.Logo} alt="logo" />
+        </Link>
+          
+       <ul>
+       
+          <li>
+              <Link to="/" className="Link">
+                Home
+              </Link>
+              <Link to="/about" className="Link">
+                About
+              </Link>
+      
+              <Link className="Link">
+              <CartWidget />
+              </Link>
+
+          </li>
+          
+    
         
-                    <a class="item" className='BtnInicio' href="#">
-                        <h2>
-                        Inicio
-                        </h2>  
-                    </a>
-                    <a class="item">Quienes somos</a>
-                    <a class="item">
-                        Tienda
-                    </a>
-                    
-                    <CartWidget/>
-
-
-            </nav>
-        )
-    }
-}
+              
+                
+             
+            
+          </ul>
+        
+      </nav>
+    );
+  };
+  
+  export default Navbar;
+  

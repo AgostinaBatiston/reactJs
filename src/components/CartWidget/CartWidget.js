@@ -1,16 +1,10 @@
-import React, { Component } from 'react'
-import './CartWidget.css';
+  
+import React from 'react';
 
-export default class CartWidget extends Component {
-    render() {
-        return ( 
-            <div >
-            
-            <a class = "item" >
-            
-            <i class = "shopping cart icon"> </i> 
-            </a> 
-            </div>
-        )
-    }
+const CartWidget = () => {
+    return ( 
+        <i className="large material-icons">shopping_cart</i>
+     );
 }
+ 
+export default CartWidget;

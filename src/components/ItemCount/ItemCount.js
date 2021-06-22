@@ -1,28 +1,25 @@
-import React,  { useState }  from 'react'
-import { Button } from 'semantic-ui-react'
-import './ItemCount.css';
+import React from 'react';
 
-function ItemCount (){
+const ItemCount = ({ initial, onAdd}) => {
+
+
     
-    const [number, setNumber] = useState(0);
 
-  const handleUp = () => {
-    // console.log("Hiciste Click");
-    setNumber(number + 1);
-  };
 
-  const handleDowm = () => {
-    setNumber(number - 1);
-  };
+    return ( 
 
-  return (
-    <div className="App">
-    
-      <p>{number}</p>
-      <Button positive onClick={handleUp}>+</Button>
-      <Button negative onClick={handleDowm}>-</Button>
-    </div>
-  );
+        
+            <>
+                <button >-</button> 
+                <div> {initial} </div> 
+                <button>+</button> 
+                <button
+                    onClick= {()=>onAdd(initial) }
+                >Agregar Al Carrito</button> 
+
+            </>
+
+     );
 }
-
+ 
 export default ItemCount;
