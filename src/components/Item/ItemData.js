@@ -1,6 +1,0 @@
-export const itemsData = [
-    { id: 1, img: "https://www.zonanegativa.com/imagenes/2019/12/Baoh.jpg", nombre: "Baoh: El visitante", autor: "Hirohiko Araki", precio: 1500, detalles: "Este manga cuenta las aventuras de Ikuro y Sumire, un adolescente y una niña que fueron víctimas de experimentos genéticos y psíquicos, respectivamente, a manos de la corporación Doress, la misma que ahora ha puesto precio a sus cabezas." },
-    { id: 2, img: "https://contentv2.tap-commerce.com/cover/large/9788418562341_1.jpg?id_com=1163", nombre: "What a wonderful world", autor: "Inio Asano", precio: 200, detalles: "Diferentes historias donde la cruda realidad de la sociedad moderna se mezcla con algo de fantasía, para entender el valor de la vida sin descuidar el caos en el que vivimos." },
-    { id: 3, img: "https://lh5.googleusercontent.com/proxy/hGZn7JiqjTEfyu-Sw90WHjiV9vBzds463LD1H1rqILm90nBooqb8kvyBbForRX5K4eZgY5D3QhJBWGEsVfdrAezTYDYPDpZ3jDboZjokx4wVToLDN2cbaI_kqKTWIDReCtotej-Z0hJZ4BlPFZ0r9AXwbJJp_as=w1200-h630-p-k-no-nu", nombre: "Uzumaki", autor: "Junji ito", precio: 50, detalles: "Kurouzu, un pequeño pueblo rodeado por la niebla en la costa de Japón, está maldito. Según Shuichi Saitô, el novio de la joven Kirie Goshima, su hogar está encantado, no por una persona, sino por un patrón: Uzumaki, el espiral, el secreto hipnótico que da forma al mundo." },
-
-];

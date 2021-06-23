@@ -1,48 +1,36 @@
-import React from 'react'
-import { Button, Icon, Item, Label } from 'semantic-ui-react'
-import ItemCount from '../ItemCount/ItemCount'
-import './ItemProd.css'
+import React, { useState, useEffect } from 'react';
+import ItemProd from '../Item/ItemProd';
+import axios from 'axios';
+import './ItemList.css';
+//LINK ROUTER DOM
+import { Link } from 'react-router-dom';
 
-const ItemProd = () => (
-    <Item.Group divided class="container"  className='ItemProducto'>
-      <Item>
-        <Item.Image src='' />
-  
-        <Item.Content>
-          <Item.Header as='a'>
-            
-           nombre
-            
-            </Item.Header>
-          <Item.Meta>
-            <span className='cinema'>
-                autor
-            </span>
-          </Item.Meta>
-          <Item.Description>
+function ItemList() {
+	const [items, setItems] = useState([]);
 
-          </Item.Description>
-          <Item.Extra>
-            <Label>Tomo único</Label>
-            <ItemCount
-            
-            initial={1}
-            min={0}
-           
-          />
-            <Button primary floated='right'>
-             Comprar
-              <Icon name='right chevron' />
-            </Button>
-  
-          </Item.Extra>
-         
-        </Item.Content>
-      </Item>
-  
-      
-    </Item.Group>
-  )
-  
-  export default ItemProd
+	useEffect(() => {
+		axios('https://60d29021858b410017b2de3b.mockapi.io/Books').then((res) => {
+			
+			setItems(res.data);
+		});
+	}, []);
 
+	return (
+		<div className='ItemList-container'>
+			{items.map((item) => {
+			
+				return (
+					<div key={item.id} className='ItemCard-Container'>
+						<Link to={`/detail/${item.id}`}>
+							<ItemProd data={item} />
+						</Link>
+
+            
+					</div>
+				);
+			})}
+		</div>
+	);
+}
+
+export default ItemList;
