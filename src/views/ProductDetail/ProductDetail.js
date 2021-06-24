@@ -1,18 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import React, { useEffect, useState, useContext} from 'react';
+import { Card, Image, Button } from 'semantic-ui-react';
+import ItemCount from '../../components/ItemCount/ItemCount';
+import CartContext from '../../contexts/CartContext';
 import axios from 'axios';
 
-function ProductDetail({ match }) {
-	// console.log('MATCH', match);
+function ProductDetail({ match, product }) {
+
+    const { setCart, setQnt } = useContext(CartContext);
+  const [article, setArticle] = useState();
+
+  useEffect(() => {
+    setArticle(product);
+  }, [product]);
+
+  const [quantity, setQuantity] = useState(1);
+
+  const handleClick = () => {
+    setQnt((value) => value + quantity);
+    article.quantity = quantity;
+
+    const prod = {
+      id: article.id,
+      name: article.name,
+      descripcion: article.descripcion,
+      stock: article.stock,
+      precio: article.precio,
+      img: article.imgURL,
+    };
+
+    setCart((value) => [...value, prod]);
+  };
+
+
 	let prodID = match.params.id;
 	const [item, setItem] = useState([]);
 	console.log('Producto', item);
 	useEffect(() => {
-		axios(`https://breakingbadapi.com/api/characters/${prodID}`).then((res) =>
+		axios(`https://60d29021858b410017b2de3b.mockapi.io/Books/${prodID}`).then((res) =>
 			// console.log(res.data)
 			setItem(res.data)
 		);
 	}, [prodID]);
+
+
+
+
+
 
 	return (
 		<div className='ProductDetail' style={{ padding: 40 }}>
@@ -33,6 +66,17 @@ function ProductDetail({ match }) {
                             <Card.Meta>
 						        <span>{item.precio}</span>
 					        </Card.Meta>
+                            <Card.Meta>
+                            <ItemCount
+                                    initial={1}
+                                    min={0}
+                                    max={product.stock}
+                                    setQuantity={setQuantity}
+                                />
+					        </Card.Meta>
+                            <Card.Meta>
+                                <Button onClick={handleClick}>Agregar al carrito {quantity}</Button>
+                            </Card.Meta>
 
 						</Card.Content>
 					</Card>

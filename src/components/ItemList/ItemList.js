@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ItemProd from '../Item/ItemProd'
-import ItemCount from '../ItemCount/ItemCount';
 import './ItemList.css';
 import axios from 'axios'
 
 
 function ItemList(){
 	
-	const onAdd=(cantidad) =>{
-			console.log('Agregar al carrito', cantidad);
-		}
+	
 
 	const [items, setItems] = useState([]);
 
@@ -29,9 +26,7 @@ function ItemList(){
 						<ItemProd  data={item}/>
 						
 					</div>
-					<ItemCount stock="5" 
-						initial="1"
-						onAdd={onAdd}/>
+					
 					</>
 				)
 			 })}

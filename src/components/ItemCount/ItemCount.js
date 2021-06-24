@@ -1,30 +1,43 @@
-import React from 'react';
-import { Button } from 'semantic-ui-react'
+import React, { useState, useEffect } from "react";
 
-const ItemCount = ({ initial, onAdd}) => {
+import "./ItemCount.css";
 
+const ItemCount = ({ initial, min, max, setQuantity }) => {
+  const [counter, setCounter] = useState(initial);
 
-    
+  const handleIncrement = () => {
+    counter < max ? setCounter(counter + 1) : console.log("Máximo alcanzado");
+  };
 
+  const handleDecrement = () => {
+    counter > min ? setCounter(counter - 1) : console.log("Mínimo alcanzado");
+  };
 
-    return ( 
+  useEffect(() => {
+    setQuantity(counter);
+  }, [counter, setQuantity]);
 
-        
-            <>
-                <div>
-                    <Button >-</Button> 
-                    <div> {initial} </div> 
-                    <Button>+</Button> 
-                </div>
-                    <Button onClick= {()=>onAdd(initial) }>
-                    Agregar Al Carrito
-                    </Button> 
-                
-                
+  return (
+    <div className="counter" style={{ width: "15rem" }}>
+      <div className="counter__content">
+        <div className="counter__content-controls">
+          <span
+            className="counter__content-controls-subtract"
+            onClick={handleDecrement}
+          >
+            
+          </span>
+          <span className="counter__content-controls-value"> {counter} </span>
+          <span
+            className="counter__content-controls-add"
+            onClick={handleIncrement}
+          >
+            
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-            </>
-
-     );
-}
- 
 export default ItemCount;
