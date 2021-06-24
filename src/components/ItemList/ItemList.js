@@ -24,12 +24,15 @@ function ItemList(){
 		 <div className="ItemList-container">
 			 {items.map((item) => {
 				return(
+					<>
 					<div key={item.id} className="ItemList-container">
 						<ItemProd  data={item}/>
-						<ItemCount stock="5" 
+						
+					</div>
+					<ItemCount stock="5" 
 						initial="1"
 						onAdd={onAdd}/>
-					</div>
+					</>
 				)
 			 })}
 		 </div>
