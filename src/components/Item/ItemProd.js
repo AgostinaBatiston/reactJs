@@ -1,25 +1,26 @@
-import React from 'react';
-import { Card} from 'semantic-ui-react';
+import React from 'react'
+import { Item } from 'semantic-ui-react'
 
-const ItemProd = ({ data }) => {
-	return (
-		<div className='ItemProd'>
-			<Card style={{ width: 300 }}>
-				
-				<Card.Content>
-					<Card.Header>{data.name}</Card.Header>
-					<Card.Meta>
-						<span>{data.autor}</span>
-					</Card.Meta>
-                    
-					<Card.Description>{data.descripcion}</Card.Description>
-                    <Card.Meta>
-						<span>{data.precio}</span>
-					</Card.Meta>
-				</Card.Content>
-			</Card>
-		</div>
-	);
-};
 
-export default ItemProd;
+
+const ItemProd = ({ data }) => (
+  
+    <Item>
+      <Item.Image size='tiny' src={data.imgURL} />
+
+      <Item.Content>
+        <Item.Header>{data.name}</Item.Header>
+        <Item.Meta>
+		<span className='stay'>{data.autor}</span>
+		</Item.Meta>
+		<Item.Meta>
+          <span className='price'>{data.precio}</span>
+        </Item.Meta>
+        <Item.Description>{data.descripcion}</Item.Description>
+      </Item.Content>
+    </Item>
+
+   
+)
+
+export default ItemProd
