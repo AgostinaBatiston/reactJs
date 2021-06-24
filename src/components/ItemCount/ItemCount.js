@@ -1,43 +1,49 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import "./ItemCount.css";
 
-const ItemCount = ({ initial, min, max, setQuantity }) => {
-  const [counter, setCounter] = useState(initial);
+function ItemCount({ stock, initial, onAdd }) {
+  const [count, setCount] = useState(parseInt(initial));
 
-  const handleIncrement = () => {
-    counter < max ? setCounter(counter + 1) : console.log("Máximo alcanzado");
+  const addHandle = () => {
+    setCount(count + 1);
   };
 
-  const handleDecrement = () => {
-    counter > min ? setCounter(counter - 1) : console.log("Mínimo alcanzado");
+  const removeHandle = () => {
+    setCount(count - 1);
   };
-
-  useEffect(() => {
-    setQuantity(counter);
-  }, [counter, setQuantity]);
 
   return (
-    <div className="counter" style={{ width: "15rem" }}>
-      <div className="counter__content">
-        <div className="counter__content-controls">
-          <span
-            className="counter__content-controls-subtract"
-            onClick={handleDecrement}
-          >
-            
-          </span>
-          <span className="counter__content-controls-value"> {counter} </span>
-          <span
-            className="counter__content-controls-add"
-            onClick={handleIncrement}
-          >
-            
-          </span>
-        </div>
+    <div className="w-25 flex-column align-items-strech">
+      <div className="m-2 p-2 d-flex flex-row justify-content-around align-items-center border-secondary border rounded">
+        <button
+          disabled={count <= 0}
+          className="btn btn-outline-primary"
+          type="button"
+          onClick={removeHandle}
+        >
+          -
+        </button>
+        <div>{count}</div>
+        <button
+          disabled={count >= stock}
+          className="btn btn-outline-primary"
+          type="button"
+          onClick={addHandle}
+        >
+          +
+        </button>
       </div>
+      <button
+        disabled={count >= 1}
+        className="btn btn-outline-primary w-75"
+        type="button"
+        onClick={onAdd}
+      >
+        Agregar al carrito
+      </button>
     </div>
   );
-};
+}
 
 export default ItemCount;
