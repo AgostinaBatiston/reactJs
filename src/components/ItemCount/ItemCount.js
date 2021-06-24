@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react'
 
 const ItemCount = ({ initial, onAdd}) => {
 
@@ -10,12 +11,15 @@ const ItemCount = ({ initial, onAdd}) => {
 
         
             <>
-                <button >-</button> 
-                <div> {initial} </div> 
-                <button>+</button> 
-                <button
-                    onClick= {()=>onAdd(initial) }
-                >Agregar Al Carrito</button> 
+                
+                    <Button >-</Button> 
+                    <div> {initial} </div> 
+                    <Button>+</Button> 
+                    <Button onClick= {()=>onAdd(initial) }>
+                    Agregar Al Carrito
+                    </Button> 
+                
+                
 
             </>
 
