@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemProd from '../Item/ItemProd'
+import './ItemList.css';
 import axios from 'axios'
 
 
@@ -14,10 +15,10 @@ function ItemList(){
 	}, []);
 
 	return (
-		 <div>
+		 <div className="ItemList-container">
 			 {items.map((item) => {
 				return(
-					<div key={item.id}>
+					<div key={item.id} className="ItemList-container">
 						<ItemProd  data={item}/>
 					</div>
 				)

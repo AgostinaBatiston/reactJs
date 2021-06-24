@@ -1,5 +1,6 @@
-.ItemProducto {
-    display: inline-block;
-    justify-content: center;
-    padding: 30px 50px 30px 50px;
+.ItemList-container {
+    display: list-item;
+    justify-items: center;
+    padding: 10px 5px 20px 5px;
+    column-gap: 60px;
 }
