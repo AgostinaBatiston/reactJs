@@ -1,18 +1,15 @@
-import React from 'react'
-import { Card,  } from 'semantic-ui-react'
+import React from 'react';
+import {Link} from "react-router-dom";
 
 
+function ItemProd({prop}) {
+    return (
+        <div className="item">
+            <img src={`${prop.image}`} alt="Imágen Producto"></img>
+            <p key={prop.id} className="item-p">{prop.title} <span>${prop.price}</span></p>
+            <p className="item-detail-container"><Link to={`/details/${prop.id}`}>ver más</Link></p>
+        </div>
+    )
+}
 
-const ItemProd = ({ data }) => (
-  <Card
-    image= {data.imgURL}
-    header={data.name}
-    meta= {data.autor}
-    description= {data.descripcion}
-    extra={data.precio}
-  />
-)
-
-
-
-export default ItemProd
+export default ItemProd;

@@ -1,39 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import ItemProd from '../Item/ItemProd'
-import { Link } from "react-router-dom";
-import './ItemList.css';
-import axios from 'axios'
+import React, {useEffect, useState} from 'react'
+import ItemProd from '../Item/ItemProd';
+import ItemCount from '../ItemCount/ItemCount';
 
 
-function ItemList(){
-	
-	
+function ItemList() {
 
-	const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([])
+   
+    useEffect(() => {
+        setTimeout(() => {
+          fetch('https://fakestoreapi.com/products')
+        .then(res => res.json())
+        .then( res => setProducts(res));
+        }, 2000);
+       
+    }, [])
 
-	useEffect(() => {
-		axios('https://60d29021858b410017b2de3b.mockapi.io/Books').then((res) =>
-			//console.log(res.data)
-			setProducts(res.data)
-		);
-	}, []);
 
-	return (
-		 <div className="ItemList-container">
-			 {products.map((prod) => {
-				return(
-					<>
-					<div key={prod.id} className="ItemList-container">
-						<Link to={`/detail/${prod.id}`}>
-							<ItemProd  data={prod}/>
-						</Link>
-					</div>
-					
-					</>
-				)
-			 })}
-		 </div>
-	)
-}
+    return (
+        <div className="item-list">
+        {products.map(p => 
+            <div className="card" style={{ margin: 10}} key={p.id}>
+                <ItemProd
+                    prop={p} key={p.id}
+                />
+                <ItemCount />
+            </div>
+        )}
+    </div>
+
+    
+    )}
 
 export default ItemList;

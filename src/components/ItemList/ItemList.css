@@ -1,5 +1,6 @@
-.ItemList-container {
+.item-list {
     display: grid;
-    justify-content: center;
-    column-gap: 60px;
+    grid-template-columns: repeat(3, auto);
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
 }

@@ -1,27 +1,13 @@
-import React from 'react'
-import ItemCount from '../ItemCount/ItemCount';
-import ItemList from '../Item/ItemProd';
+import React from 'react';
+import ItemList from '../ItemList/ItemList';
 
-const ItemListContainer = () => {
-  const onAdd=(cantidad) =>{
-      console.log('Agregar al carrito', cantidad);
-  }
 
-  return (  
-      <>
-      <div>
-      <ItemList />
-      <ItemCount stock="5" 
-                  initial="1"
-                  onAdd={onAdd}/>
-      </div>
-      
-      </>
-      
-  );
+function ItemListContainer () {
+    return (
+        <div className="item-list-container">
+           <ItemList />
+        </div>
+    )
 }
 
 export default ItemListContainer;
-
-
-
