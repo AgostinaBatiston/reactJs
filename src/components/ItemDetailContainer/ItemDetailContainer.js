@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './_ItemDetailContainer.scss';
-import ItemDetail from '../../Views/ItemDetail';
+import ProductDetail from '../../views/ProductDetail/ProductDetail';
 import {useParams} from 'react-router-dom';
 
 function ItemDetailContainer() {
@@ -17,9 +17,9 @@ function ItemDetailContainer() {
     }, [id])
 
     return (
-        <div className="item-detail-container">
-            <div className="card" key={item.id}>
-                <ItemDetail  prop={item}/>
+        <div>
+            <div key={item.id}>
+                <ProductDetail  prop={item}/>
             </div>
         </div>
     )

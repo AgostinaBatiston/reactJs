@@ -7,7 +7,7 @@ function ItemProd({prop}) {
     return (
        
         <div className="item">
-            <Link to={`/details/${prop.id}`}>
+            <Link to={`/detail/${prop.id}`}>
 
             <Card>
                 <Image src={`${prop.image}`} wrapped ui={false} />

@@ -1,19 +1,23 @@
 import React from 'react';
 import ItemCount from '../../components/ItemCount/ItemCount';
-
+import { Button } from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
 
 function  ProductDetail({prop}) {
     return (
         <div>
-
-          <div className="prop card item-detail">
-              <img src={`${prop.image}`} alt="Imágen Producto"></img>
+                
+            <div >
+              <img src={`${prop.image}`} alt="Img-producto"></img>
               <p key={prop.id} className="prop-p">{prop.title} <span>${prop.price}</span></p>
               <p className="prop-p-description">{prop.description}</p>
               <ItemCount />
-              <Link to="/products"><p className="prop-p-volver">volver</p></Link>
+              <Link to="/">
+                  <Button>volver</Button>
+                  
+                </Link>
           </div>
+          
             
         </div>
     )
