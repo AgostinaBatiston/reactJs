@@ -1,3 +1,11 @@
-.Item-producto {
-    border: brown;
-}
+    .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .imgProd {
+        width: 50%;
+        height: 50%;
+    }
