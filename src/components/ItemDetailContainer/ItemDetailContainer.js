@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './_ItemDetailContainer.scss';
+
 import ProductDetail from '../../views/ProductDetail/ProductDetail';
 import {useParams} from 'react-router-dom';
 
