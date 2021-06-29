@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import { Card, Image } from 'semantic-ui-react'
+import './ItemProd.css';
 
 
 function ItemProd({prop}) {
@@ -10,7 +11,7 @@ function ItemProd({prop}) {
             <Link to={`/detail/${prop.id}`}>
 
             <Card>
-                <Image src={`${prop.image}`} wrapped ui={false} />
+                <Image src={`${prop.image}`} wrapped ui={false}  />
                 <Card.Content>
                 <Card.Header>{prop.title}</Card.Header>
                

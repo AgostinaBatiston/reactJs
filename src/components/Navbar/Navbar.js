@@ -1,8 +1,8 @@
 import React from 'react'
 import './Navbar.css';
 
-import CartWidget from '../CartWidget/CartWidget';
 
+import { Dropdown } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -14,16 +14,28 @@ const Navbar = () => {
        <ul>
        
           <li>
-              <Link to="/" className="Link">
-                Home
+              
+              <Link to="/categories/electronics" className="Link-navbar">
+                Electrónicos
               </Link>
-              <Link to="/about" className="Link">
-                About
+
+
+              <Link to="/categories/jewelery" className="Link-navbar">
+               Joyas
               </Link>
+
+
+              <Dropdown text='Ropa' className="Link-navbar">
+                <Dropdown.Menu>
+                  
+  
+                  
+                <Link to="/categories/women" ><Dropdown.Item  text='Mujer' className="Link-Dropdown"/></Link>
+                <Link to="/categories/men"><Dropdown.Item  text='Hombre' className="Link-Dropdown"/></Link>
+                  
+                </Dropdown.Menu>
+              </Dropdown>
       
-              <Link className="Link">
-              <CartWidget />
-              </Link>
 
           </li>
           

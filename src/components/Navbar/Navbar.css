@@ -1,6 +1,7 @@
 .Navbar {
     display: flex;
-    background: #000;
+    background-color: #d3d3d3;
+    background-image: linear-gradient(315deg, #d3d3d3 0%, #7f8c8d 74%);
     min-height: 5vh;
 }
 
@@ -11,9 +12,15 @@ ul {
     width: 100%;
 }
 
-.Link {
+.Link-navbar {
     padding: 0px 10px 0px 10px;
     font-size: 30px;
     color: white;
     list-style-type: none;
+}
+
+.Link-Dropdown {
+    font-size: 20px;
+    color: black;
+    padding: 25px 20px 25px 20px;
 }

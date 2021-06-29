@@ -47,7 +47,7 @@ class ItemCount extends Component  {
                         <Button positive onClick={this.handlerPlus}> + </Button>
                         
                     </div>
-                    <Button onClick={this.onAdd}>Agregar al carrito </Button>
+                    <Button onClick={this.onAdd} >Agregar al carrito </Button>
                 </div>
             </div>
         )
