@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ItemCount from '../../components/ItemCount/ItemCount';
+import { Card, Image } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
 import './Categories.css';
 
 
@@ -17,10 +18,24 @@ function CategoryElectronics() {
             <h2>Electrónicos</h2>
             {electronics.map ( elec =>
                 <div className="prop" style={{ margin: 20}}>
-                    <img src={`${elec.image}`} alt="Imágen Producto" className="img-categoria"></img>
-                    <h4 key={elec.id} className="item-p">{elec.title} </h4>
-                    <h2>${elec.price}</h2>
-                    <ItemCount />
+                    <Link to= {`/detail/${elec.id}` }>
+                    <Card>
+                            <Image src = { `${elec.image}` } wrapped ui = { false }/> 
+                            <Card.Content>
+                            <Card.Header key={elec.id}> 
+                                <h4>
+                                { elec.title } 
+                                </h4>
+                            </Card.Header>
+
+                            <Card.Description > 
+                                <h2>
+                                ${elec.price }
+                                </h2> 
+                            </Card.Description> 
+                            </Card.Content>
+                        </Card>
+                    </Link>
                    
                 </div>
                 )

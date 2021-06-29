@@ -1,31 +1,31 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Card, Image } from 'semantic-ui-react'
 import './ItemProd.css';
 
 
-function ItemProd({prop}) {
+function ItemProd({ prop }) {
     return (
-       
-        <div className="item">
-            <Link to={`/detail/${prop.id}`}>
 
-            <Card>
-                <Image src={`${prop.image}`} wrapped ui={false}  />
-                <Card.Content>
-                <Card.Header>{prop.title}</Card.Header>
-               
-                <Card.Description>
-                    {prop.price}
-                </Card.Description>
-                </Card.Content>
-               
-            </Card>
+        <div className = "item" >
+        <Link to = { `/detail/${prop.id}` } >
+
+        <Card>
+        <Image src = { `${prop.image}` } wrapped ui = { false }/> 
+        <Card.Content>
+        <Card.Header> { prop.title } </Card.Header>
+
+        <Card.Description > { prop.price } </Card.Description> 
+        </Card.Content>
 
 
-            </Link>
-            
-            
+        </Card>
+
+
+        </Link>
+        
+
+
         </div>
     )
 }

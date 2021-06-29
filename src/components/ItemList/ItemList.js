@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import ItemProd from '../Item/ItemProd';
-import ItemCount from '../ItemCount/ItemCount';
+
 import './ItemList.css';
 
 
@@ -25,7 +25,7 @@ function ItemList() {
                 <ItemProd
                     prop={p} key={p.id}
                 />
-                <ItemCount />
+               
             </div>
         )}
     </div>
