@@ -1,9 +1,14 @@
-  
 import React from 'react';
+import {Icon} from 'semantic-ui-react'
 
 const CartWidget = () => {
     return ( 
-        <i className="large material-icons">shopping_cart</i>
+        <>
+        <Icon>
+            <i aria-hidden="true" class="shopping bag big icon"></i>
+       </Icon>
+        
+        </>
      );
 }
  
