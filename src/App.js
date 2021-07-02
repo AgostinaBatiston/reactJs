@@ -10,34 +10,36 @@ import Joyas from '../src/views/Categories/CategoryJewelery';
 import Mujer from '../src/views/Categories/CategoryWomen';
 import Hombre from '../src/views/Categories/CategoryMen';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-
+import {CartProvider} from './components/Context/CartContext'
+ 
 
 
 class App extends Component {
   render() {
         return (
-          <Router>
-          <div className="App">
-            <Header />
-            <Navbar />
-            
-            
-            <Switch>
-              <Route path="/" exact component={Home}  />
-              <Route path="/about" component={About} />
-              <Route path='/detail/:id' component={Detail} />
-              <Route path='/categories/electronics' component={Electronicos} />
-              <Route path='/categories/women' component={Mujer} />
-              <Route path='/categories/men' component={Hombre} />
-              <Route path='/categories/jewelery' component={Joyas} />
+
+          <CartProvider> 
+            <Router>
+            <div className="App">
+              <Header />
+              <Navbar />
               
               
-            </Switch>
-            
-          </div>
-        </Router>
-        
+              <Switch>
+                <Route path="/" exact component={Home}  />
+                <Route path="/about" component={About} />
+                <Route path='/detail/:id' component={Detail} />
+                <Route path='/categories/electronics' component={Electronicos} />
+                <Route path='/categories/women' component={Mujer} />
+                <Route path='/categories/men' component={Hombre} />
+                <Route path='/categories/jewelery' component={Joyas} />
+                
+                
+              </Switch>
+              
+            </div>
+          </Router>
+        </CartProvider>
        
         
         

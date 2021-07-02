@@ -22,15 +22,18 @@ function ItemList() {
         <div className="item-list">
         {products.map(p => 
             <div className="card" style={{ margin: 10}} key={p.id}>
-                <ItemProd
-                    prop={p} key={p.id}
+                <ItemProd 
+                    key={p.id}
+                    image={p.image} 
+                    title={p.title}
+                    id={p.id}
+                    price={p.price}
                 />
-               
             </div>
         )}
     </div>
 
-    
+
     )}
 
 export default ItemList;

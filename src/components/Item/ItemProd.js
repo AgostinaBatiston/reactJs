@@ -4,18 +4,18 @@ import { Card, Image } from 'semantic-ui-react'
 import './ItemProd.css';
 
 
-function ItemProd({ prop }) {
+function ItemProd({id, image, title, price }) {
     return (
 
         <div className = "item" >
-        <Link to = { `/detail/${prop.id}` } >
+        <Link to = { `/detail/${id}` } >
 
         <Card>
-        <Image src = { `${prop.image}` } wrapped ui = { false }/> 
+        <Image src = {image} wrapped ui = { false }/> 
         <Card.Content>
-        <Card.Header> { prop.title } </Card.Header>
+        <Card.Header> {title} </Card.Header>
 
-        <Card.Description > { prop.price } </Card.Description> 
+        <Card.Description > {price } </Card.Description> 
         </Card.Content>
 
 

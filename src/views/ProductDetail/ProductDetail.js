@@ -1,14 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import ItemCount from '../../components/ItemCount/ItemCount';
 import { Card, Image,Button } from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
+import {CartContext} from '../../components/Context/CartContext'
 import './ProductDetail.css';
+
 
 function  ProductDetail({prop}) {
     const [quantify, setQuantify] = useState(0);
+    const {addItem} = useContext(CartContext);
 
     const onAdd = (e) => {
       setQuantify(e);
+      addItem(prop, e);
+
     }
 
 
