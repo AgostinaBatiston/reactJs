@@ -11,7 +11,7 @@ function Cart() {
     return (
         <div className="div-cart">
             <div>
-                <h1 className="titulo-cart">Carrito de compras</h1>
+                <h1 className="titulo">Carrito de compras</h1>
             </div>
             <div>
                 <section id="form">
@@ -28,7 +28,7 @@ function Cart() {
                                         <img className="img-cart" src={i.item.image} alt="Imágen producto en carrito"></img>
                                         <h1>{i.quantify} {i.item.title} ${i.item.price}</h1>
                                         <h3 className="cart-p-item">Total item: ${i.item.price * i.quantify}</h3>
-                                        <Button color='red' onClick={removeItem}>X</Button>
+                                        <Button color='red' className="remove-item" onClick={removeItem}>X</Button>
                                     </div>
                                 )}
                                 <h2 className="cart-total">TOTAL:${totalPrice.toFixed(2)}</h2>
