@@ -4,13 +4,14 @@ import {Button } from 'semantic-ui-react'
 import {CartContext} from '../../Context/CartContext' ;
 import './Cart.css';
 
+
 function Cart() {
     const {cart, removeItem, clear, totalPrice} = useContext(CartContext);
 
     return (
         <div className="div-cart">
             <div>
-                <h2 className="titulo">Carrito de compras</h2>
+                <h1 className="titulo-cart">Carrito de compras</h1>
             </div>
             <div>
                 <section id="form">
@@ -21,16 +22,16 @@ function Cart() {
                                 <Link to="/"><Button className="btn">Ir a productos</Button></Link>
                             </div>
                             :
-                            <div className="cart-div">
+                            <div >
                                 {cart.map( i => 
                                     <div className="cart-item"  key={i.item.id}>
                                         <img className="img-cart" src={i.item.image} alt="Imágen producto en carrito"></img>
-                                        <p>{i.quantify} {i.item.title} ${i.item.price}</p>
-                                        <p className="cart-p-item">total item: ${i.item.price * i.quantify}</p>
-                                        <p className="remove-item" onClick={removeItem}>X</p>
+                                        <h1>{i.quantify} {i.item.title} ${i.item.price}</h1>
+                                        <h3 className="cart-p-item">Total item: ${i.item.price * i.quantify}</h3>
+                                        <Button color='red' onClick={removeItem}>X</Button>
                                     </div>
                                 )}
-                                <p className="cart-total">TOTAL:${totalPrice.toFixed(2)}</p>
+                                <h2 className="cart-total">TOTAL:${totalPrice.toFixed(2)}</h2>
                                 <div className="cart-checkout">
                                     <Button className="btn">PAGAR</Button>
                                 </div>
