@@ -10,7 +10,8 @@ import Joyas from '../src/views/Categories/CategoryJewelery';
 import Mujer from '../src/views/Categories/CategoryWomen';
 import Hombre from '../src/views/Categories/CategoryMen';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {CartProvider} from './components/Context/CartContext'
+import {CartProvider} from './Context/CartContext';
+import Cart from '../src/views/Cart/Cart';
  
 
 
@@ -33,6 +34,7 @@ class App extends Component {
                 <Route path='/categories/women' component={Mujer} />
                 <Route path='/categories/men' component={Hombre} />
                 <Route path='/categories/jewelery' component={Joyas} />
+                <Route path='/cart' component={Cart} />
                 
                 
               </Switch>

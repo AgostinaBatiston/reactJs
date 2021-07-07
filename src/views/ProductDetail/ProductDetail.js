@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react';
 import ItemCount from '../../components/ItemCount/ItemCount';
 import { Card, Image,Button } from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
-import {CartContext} from '../../components/Context/CartContext'
+import {CartContext} from '../../Context/CartContext'
 import './ProductDetail.css';
 
 
