@@ -1,22 +1,33 @@
 import React, {useEffect, useState} from 'react'
-import ItemProd from '../Item/ItemProd';
 
-import './ItemList.css';
+import {db} from '../../Firebase/firebase';
 
+import ItemProd from '../Item';
 
 function ItemList() {
+    const [products, setProducts] = useState([]);
 
-    const [products, setProducts] = useState([])
-   
-    useEffect(() => {
-        setTimeout(() => {
-          fetch('https://fakestoreapi.com/products')
-        .then(res => res.json())
-        .then( res => setProducts(res));
-        }, 2000);
-       
-    }, [])
+	const addOrEdit = async (object) => {
+		console.log(object);
+		await db.collection('products').doc().set(object);
+		console.log('nuevo producto agregado!');
+	};
 
+	const getProducts = () => {
+		db.collection('products').onSnapshot((querySnapshot) => {
+			const docs = [];
+			querySnapshot.forEach((doc) => {
+				docs.push({ ...doc.data(), id: doc.id });
+				console.log(docs);
+			});
+			setProducts(docs);
+		});
+	};
+
+	
+	useEffect(() => {
+		getProducts();
+	}, []);
 
     return (
         <div className="item-list">
@@ -32,8 +43,6 @@ function ItemList() {
             </div>
         )}
     </div>
-
-
     )}
 
 export default ItemList;

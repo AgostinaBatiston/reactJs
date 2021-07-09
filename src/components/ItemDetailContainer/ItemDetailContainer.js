@@ -1,26 +1,37 @@
 import React, {useEffect, useState} from 'react';
+// FIREBASE
+import {db} from '../../Firebase/firebase';
+// JS
+import ProductDetail from '../../views/ProductDetail';
 
-import ProductDetail from '../../views/ProductDetail/ProductDetail';
-import {useParams} from 'react-router-dom';
 
-function ItemDetailContainer() {
-    
-    const [item, setItem] = useState({});
-    const {id} = useParams();
+function ItemDetailContainer( { match }) {
+    let itemID = match.params.id;
+    const [item, setItem] = useState([]);
 
-    useEffect( () => {
-        setTimeout( () => {
-            fetch(`https://fakestoreapi.com/products/${id}`)
-            .then (res => res.json())
-            .then (res => setItem(res))
-        }, 2000);
-    }, [id])
+    const getItem = () => {
+        db.collection('products').onSnapshot((querySnapshot) => {
+            const docs = [];
+            querySnapshot.forEach((doc) => {
+            docs.push({ ...doc.data(), id: doc.id })
+            });
+        setItem(docs);
+        });
+    }
+
+    useEffect(() => {
+        getItem();            
+    }, []);
+
+    let itemMatch = item.filter(item => item.id === itemID);
 
     return (
-        <div>
-            <div key={item.id}>
-                <ProductDetail  prop={item}/>
-            </div>
+        <div className="item-detail-container">
+            {itemMatch.map( (item) => 
+                <div className="card" key={item.id}>
+                    <ProductDetail  prop={item}/>
+                </div>
+            )}
         </div>
     )
 }

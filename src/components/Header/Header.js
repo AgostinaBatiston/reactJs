@@ -26,14 +26,6 @@ class Header extends Component {
 						<img src={Images.Logo} alt="logo" className="logoImg"/>
 				</Link>
 
-				<Link to="/about" className="Link">
-					<Menu.Item
-						name='about'
-						active={activeItem === 'about'}
-						onClick={this.handleItemClick}
-					/>
-				
-				</Link>
 				
 			
 				<Menu.Menu position='right'>
