@@ -25,7 +25,7 @@ function ItemProd({id, image, title, price, prop }) {
         <Card.Content>
         <Card.Header> {title} </Card.Header>
 
-        <Card.Description > {price } </Card.Description> 
+        <Card.Description > ${price } </Card.Description> 
         </Card.Content>
             
 

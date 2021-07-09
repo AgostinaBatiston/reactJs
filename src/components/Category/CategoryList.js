@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import ItemProd from '../Item'
+import ItemProd from '../Item/ItemProd'
 import {db} from '../../Firebase/firebase';
 
 
 
-function Category({match}) {
+function Categories({match}) {
     let itemCategory = match.params.id;
     const [category, setCategory] = useState ([]);
 
@@ -31,4 +31,4 @@ function Category({match}) {
     )
 }
 
-export default Category;
+export default Categories;

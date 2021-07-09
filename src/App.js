@@ -4,8 +4,9 @@ import Home from "./views/home";
 
 import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header/Header';
+import Products from './views/Products/Products';
 import Detail from './components/ItemDetailContainer/ItemDetailContainer';
-import Category from './components/Category'
+import Category from './components/Category/CategoryList'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {CartProvider} from './Context/CartContext';
 import Cart from '../src/views/Cart/Cart';
@@ -25,7 +26,7 @@ function App() {
               
               <Switch>
                 <Route path="/" exact component={Home}  />
-               
+                <Route path='/products' exact component={Products} />
                 <Route path='/detail/:id' component={Detail} />
                 <Route path='/category/:id' component={Category} />
                

@@ -1,12 +1,12 @@
 import React from 'react'
-import ItemListContainer from '../components/ItemListContainer/ItemListContainer'
+
 import './views.css';
 
 function Home() {
     return (
       <div>
-        <h1 className="titleInicio">HOME</h1>
-        <ItemListContainer />
+        <h1 className="titleInicio">Bienvenidos a Tienda Uzumaki</h1>
+        
       </div>
     );
   }

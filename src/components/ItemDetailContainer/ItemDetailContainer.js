@@ -29,7 +29,7 @@ function ItemDetailContainer( { match }) {
         <div className="item-detail-container">
             {itemMatch.map( (item) => 
                 <div className="card" key={item.id}>
-                    <ProductDetail  prop={item}/>
+                    <ProductDetail  prop={item} />
                 </div>
             )}
         </div>

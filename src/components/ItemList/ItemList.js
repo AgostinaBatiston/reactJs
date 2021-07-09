@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 
 import {db} from '../../Firebase/firebase';
 
-import ItemProd from '../Item';
+import ItemProd from '../Item/ItemProd';
 
 function ItemList() {
     const [products, setProducts] = useState([]);
