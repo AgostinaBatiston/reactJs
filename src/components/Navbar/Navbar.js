@@ -14,7 +14,12 @@ const Navbar = () => {
        <ul>
        
           <li>
+
               
+              <Link to="/products" className="Link-navbar">
+                Productos
+              </Link>
+
               <Link to="/category/manga" className="Link-navbar">
                 Mangas
               </Link>

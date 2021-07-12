@@ -19,14 +19,14 @@ function Cart() {
                         { cart.length === 0 ? 
                             <div>
                                 <p><b>TU CARRITO ESTÁ VACÍO</b></p>
-                                <Link to="/"><Button className="btn">Ir a productos</Button></Link>
+                                <Link to="/products"><Button className="btn">Ir a productos</Button></Link>
                             </div>
                             :
                             <div >
                                 {cart.map( i => 
                                     <div className="cart-item"  key={i.item.id}>
                                         <img className="img-cart" src={i.item.image} alt="Imágen producto en carrito"></img>
-                                        <h1>{i.quantify} {i.item.title} ${i.item.price}</h1>
+                                        <h1>{i.quantity} {i.item.title} ${i.item.price}</h1>
                                         <h3 className="cart-p-item">Total item: ${i.item.price * i.quantify}</h3>
                                         <Button color='red' className="remove-item" onClick={removeItem}>X</Button>
                                     </div>
@@ -36,7 +36,7 @@ function Cart() {
                                     <Button className="btn">PAGAR</Button>
                                 </div>
                                 <div className="cart-buttons">
-                                    <Link to="/"><Button className="btn">Seguir comprando</Button></Link>
+                                    <Link to="/products"><Button className="btn">Seguir comprando</Button></Link>
                                     <Button className="btn" onClick={clear}>Vaciar carrito</Button>
                                 </div>
                             </div>

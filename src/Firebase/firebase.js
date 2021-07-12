@@ -9,10 +9,10 @@ var firebaseConfig = {
     storageBucket: "tienda-uzumaki.appspot.com",
     messagingSenderId: "410728580345",
     appId: "1:410728580345:web:df2ba2c6940990608e8e28"
-  };
-  // Initialize Firebase
-
-  const fb = firebase.initializeApp(firebaseConfig);
+};
+// Initialize Firebase
+//firebase.initializeApp(firebaseConfig);
+const fb = firebase.initializeApp(firebaseConfig);
 
 // Y ahora utilizamos su método llamado firestore, lo ejecutamos y lo guardamos
 // dentro de una constante llamada db. También debemos exportar

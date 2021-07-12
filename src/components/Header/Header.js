@@ -12,7 +12,7 @@ class Header extends Component {
   	handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
 	render() {
-		const { activeItem } = this.state
+		
 
 
 		return (

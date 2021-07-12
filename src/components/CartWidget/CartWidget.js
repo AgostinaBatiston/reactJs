@@ -4,7 +4,7 @@ import {Icon} from 'semantic-ui-react'
 import {CartContext} from '../../Context/CartContext';
 
 function CartWidget () {
-    const {cart, totalQuantify} = useContext(CartContext);
+    const {cart, totalQuantity} = useContext(CartContext);
 
     return ( 
 
@@ -18,7 +18,7 @@ function CartWidget () {
                 <Icon>
                     <i aria-hidden="true" class="shopping bag big icon"></i>
                 </Icon>
-                <p>{totalQuantify}</p>
+                <p>{totalQuantity}</p>
             </div>
        </Link>
         }

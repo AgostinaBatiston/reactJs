@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-// FIREBASE
+
 import {db} from '../../Firebase/firebase';
-// JS
-import ProductDetail from '../../views/ProductDetail';
+
+import ProductDetail from '../../views/ProductDetail/ProductDetail';
 
 
 function ItemDetailContainer( { match }) {
@@ -29,7 +29,7 @@ function ItemDetailContainer( { match }) {
         <div className="item-detail-container">
             {itemMatch.map( (item) => 
                 <div className="card" key={item.id}>
-                    <ProductDetail  prop={item} />
+                    <ProductDetail  prop={item}/>
                 </div>
             )}
         </div>

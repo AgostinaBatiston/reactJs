@@ -4,24 +4,24 @@ import { Button} from 'semantic-ui-react';
 
 
     const ItemCount = ({stock, onAdd}) => {
-            const [quantify, setQuantify] = useState(1);
+            const [quantity, setQuantity] = useState(1);
             stock = 5;
             const handlerPlus = () => {
-            setQuantify((quantify === stock) ? stock : quantify + 1 )
+            setQuantity((quantity === stock) ? stock : quantity + 1 )
             };
             const handlerMinus = () =>{
-            setQuantify((quantify >= 2) ? quantify - 1 : quantify)
+            setQuantity((quantity >= 2) ? quantity - 1 : quantity)
             }
         return (
             <div className="card card-main">
                 <div className="card-body">
                     <div className="card card-content">
                         <Button negative onClick={handlerMinus} > - </Button>
-                        <p id="counter-value">{quantify}</p>
+                        <p id="counter-value">{quantity}</p>
                         <Button positive  onClick={handlerPlus}> + </Button>
                         
                     </div>
-                    <Button onClick={()=>onAdd(quantify)} >Comprar </Button>
+                    <Button onClick={()=>onAdd(quantity)} >Comprar </Button>
                 </div>
             </div>
         )

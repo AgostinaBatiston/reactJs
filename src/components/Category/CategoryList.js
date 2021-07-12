@@ -9,7 +9,7 @@ function Categories({match}) {
     const [category, setCategory] = useState ([]);
 
     const getItems = () => {
-		db.collection('products').where('type','==', itemCategory).get().then((querySnapshot) => {
+		db.collection('products').where('category','==', itemCategory).get().then((querySnapshot) => {
 			const docs = [];
 			querySnapshot.forEach((doc) => {
 				docs.push({ ...doc.data(), id: doc.id });
@@ -30,5 +30,6 @@ function Categories({match}) {
         </div>
     )
 }
+
 
 export default Categories;

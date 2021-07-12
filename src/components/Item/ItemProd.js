@@ -1,24 +1,18 @@
-import React,{useContext, useState} from 'react';
-import {CartContext} from '../../Context/CartContext';
+import React from 'react';
+
 import { Link } from "react-router-dom";
-import ItemCount from '../ItemCount/ItemCount';
+
 import { Card, Image } from 'semantic-ui-react'
 import './ItemProd.css';
 
 
 function ItemProd({id, image, title, price, prop }) {
-    const [quantify, setQuantify] =useState(0);
-    const {addItem} = useContext(CartContext);
-
-    const onAdd = (e) => {
-        setQuantify(e);
-        addItem(prop, e);
-    }
+    
 
     return (
 
         <div className = "item" >
-        <Link to = { `/detail/${id}` } >
+        <Link to = { `/details/${id}` } >
 
         <Card key={id}>
         <Image src = {image} wrapped ui = { false }/> 
@@ -30,12 +24,7 @@ function ItemProd({id, image, title, price, prop }) {
             
 
         </Card>
-        <Card>
-            <div>
-                <ItemCount onAdd={onAdd}/>
-            </div>
-        </Card>
-
+        
         </Link>
         
 

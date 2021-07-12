@@ -7,11 +7,7 @@ import ItemProd from '../Item/ItemProd';
 function ItemList() {
     const [products, setProducts] = useState([]);
 
-	const addOrEdit = async (object) => {
-		console.log(object);
-		await db.collection('products').doc().set(object);
-		console.log('nuevo producto agregado!');
-	};
+	
 
 	const getProducts = () => {
 		db.collection('products').onSnapshot((querySnapshot) => {
