@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ItemProd from '../Item/ItemProd'
 import {db} from '../../Firebase/firebase';
+import '../../views/views.css'
 
 
 
@@ -22,10 +23,10 @@ function Categories({match}) {
 	});
 
     return (
-        <div className="category-list">
-            <h2>{itemCategory.toUpperCase()}</h2>
+        <div>
+            <h1 className="titleInicio">{itemCategory}</h1>
             <div className="card category">
-                {category.map(p=> <ItemProd image={p.image} title={p.title} id={p.id} price={p.price} />)}
+                {category.map(p=> <ItemProd image={p.image} title={p.title} autor={p.autor} id={p.id} price={p.price} />)}
             </div>
         </div>
     )

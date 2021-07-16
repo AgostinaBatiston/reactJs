@@ -1,7 +1,9 @@
 import React, {useState, useContext} from 'react';
 import ItemCount from '../../components/ItemCount/ItemCount';
 import {Link} from 'react-router-dom';
+import {Button, Card, Image } from 'semantic-ui-react'
 import {CartContext} from '../../Context/CartContext'
+import './ProductDetail.css';
 
 
 
@@ -16,21 +18,43 @@ function  ProductDetail({prop}) {
     }
 
     return (
-        <div>
-            <div className="prop card item-detail">
-                <img src={prop.image} alt="Imágen Producto"></img>
-                <p key={prop.id} className="prop-p">{prop.title} <span>${prop.price}</span></p>
-                <p className="prop-p-description">{prop.description}</p>
-                {quantity === 0 ? 
+        <div className="ItemDetail">
+             
+
+                <Card>
+                    <Image src={prop.image} wrapped ui={false} />
+                    <Card.Content>
+                    <Card.Header key={prop.id}>{prop.title}</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>{prop.autor}</span>
+                    </Card.Meta>
+                    <Card.Content>
+                       <h4>${prop.price}</h4>
+                        
+                    </Card.Content>
+                    
+                    <Card.Description>
+                    {prop.description}
+                    </Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                    
+                    {quantity === 0 ? 
                     <ItemCount stock={prop.stock} name={prop.title} onAdd={onAdd}/>
                 :   <div className="terminar-compra">
                         <p><b>Compraste {quantity} {prop.title}</b></p>
-                    <Link to={'/cart'} ><button className="btn btn-secondary">Terminar compra</button></Link>
+                    <Link to={'/cart'} >< Button>Terminar compra</Button></Link>
                     </div>      
                     
                 }
-                <Link to="/products"><p className="prop-p-volver">volver</p></Link>
-            </div>
+                    
+                    </Card.Content>
+                </Card>
+                
+                <Card>
+                <Link to="/"><Button>volver</Button></Link>
+                </Card>
+            
         </div>
     )
 }

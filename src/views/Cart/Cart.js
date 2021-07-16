@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
-import {Button } from 'semantic-ui-react'
+import {Button, Item, Label } from 'semantic-ui-react'
 import {CartContext} from '../../Context/CartContext' ;
 import './Cart.css';
 
@@ -11,7 +11,7 @@ function Cart() {
     return (
         <div className="div-cart">
             <div>
-                <h1 className="titulo">Carrito de compras</h1>
+                <h1 className="titulo-cart">Carrito de compras</h1>
             </div>
             <div>
                 <section id="form">
@@ -19,16 +19,32 @@ function Cart() {
                         { cart.length === 0 ? 
                             <div>
                                 <p><b>TU CARRITO ESTÁ VACÍO</b></p>
-                                <Link to="/products"><Button className="btn">Ir a productos</Button></Link>
+                                <Link to="/"><Button className="btn">Ir a productos</Button></Link>
                             </div>
                             :
                             <div >
                                 {cart.map( i => 
-                                    <div className="cart-item"  key={i.item.id}>
-                                        <img className="img-cart" src={i.item.image} alt="Imágen producto en carrito"></img>
-                                        <h1>{i.quantity} {i.item.title} ${i.item.price}</h1>
-                                        <h3 className="cart-p-item">Total item: ${i.item.price * i.quantify}</h3>
-                                        <Button color='red' className="remove-item" onClick={removeItem}>X</Button>
+                                    <div  >
+                                        <Item.Group divided>
+                                            <Item key={i.item.id}>
+                                                <Item.Image src={i.item.image}  />
+
+                                                <Item.Content>
+                                                    <Item.Header as='a'>{i.item.title}</Item.Header>
+                                                    <Item.Meta>
+                                                    <span className='cinema'>{i.quantity} Items</span>
+                                                    </Item.Meta>
+                                                    <Item.Description>
+                                                    <h3 className="cart-p-item">Total item: ${i.item.price * i.quantity}</h3>
+                                                    </Item.Description>
+                                                    <Item.Extra>
+                                                    <Label> <Button color='red' className="remove-item" onClick={removeItem}>X</Button></Label>
+                                                    
+                                                    </Item.Extra>
+                                                </Item.Content>
+                                            </Item>
+                                        </Item.Group>
+                                       
                                     </div>
                                 )}
                                 <h2 className="cart-total">TOTAL:${totalPrice.toFixed(2)}</h2>
@@ -36,7 +52,7 @@ function Cart() {
                                     <Button className="btn">PAGAR</Button>
                                 </div>
                                 <div className="cart-buttons">
-                                    <Link to="/products"><Button className="btn">Seguir comprando</Button></Link>
+                                    <Link to="/"><Button className="btn">Seguir comprando</Button></Link>
                                     <Button className="btn" onClick={clear}>Vaciar carrito</Button>
                                 </div>
                             </div>

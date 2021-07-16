@@ -14,22 +14,16 @@ const Navbar = () => {
        <ul>
        
           <li>
-
-              
-              <Link to="/products" className="Link-navbar">
-                Productos
-              </Link>
-
-              <Link to="/category/manga" className="Link-navbar">
+              <Link to="/category/Mangas" className="Link-navbar">
                 Mangas
               </Link>
 
 
-              <Link to="/category/comic" className="Link-navbar">
+              <Link to="/category/Comics" className="Link-navbar">
                Comics
               </Link>
 
-              <Link to="/category/libro" className="Link-navbar">
+              <Link to="/category/Libros" className="Link-navbar">
               Libros
               </Link>
                   

@@ -1,6 +1,7 @@
-.ItemDetail-card {
+.ItemDetail {
     display: flex;
     align-items: center;
     flex-direction: column;
     min-height: 700px;
+    margin: 20px 0px 0px 0px;
 }

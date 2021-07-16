@@ -26,13 +26,14 @@ function ItemList() {
 	}, []);
 
     return (
-        <div className="item-list">
+        <div >
         {products.map(p => 
-            <div className="card" style={{ margin: 10}} key={p.id}>
+            <div className="card" key={p.id}>
                 <ItemProd 
                     key={p.id}
                     image={p.image} 
                     title={p.title}
+                    autor={p.autor}
                     id={p.id}
                     price={p.price}
                 />

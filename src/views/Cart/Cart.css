@@ -1,12 +1,19 @@
 .div-cart {
-    margin: auto;
+    margin: 10px 30px 20px 320px;
     width: 50%;
     border: 3px solid;
     padding: 20px 30px 20px 30px;
     text-align: center;
 }
 
+.image-cart {
+    height: 100px;
+    width: 200px;
+}
+
 .titulo-cart {
-    padding: 0px 0px 50px 0px;
-    color: brown;
+    display: flex;
+    justify-content: center;
+    font-family: serif;
+    padding: 0px 0px 60px 0px;
 }
