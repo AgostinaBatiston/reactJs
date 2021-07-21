@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react';
-
+import { Button, Form } from 'semantic-ui-react'
 import {CartContext} from '../../Context/CartContext';
-
 import {db} from '../../Firebase/firebase';
-
 import SimpleDateTime  from 'react-simple-timestamp-to-date';
+import '../views.css'
+import './OrderForm.css';
 
 function OrderForm() {
    
@@ -49,45 +49,46 @@ function OrderForm() {
     };
 
     return (
-        <div>
+        <div className="div-order">
             <div>
-                <h2 className="titulo">FORMULARIO DE COMPRA</h2>
+                <h2 className="titleInicio">FORMULARIO DE COMPRA</h2>
             </div>
             <div className="form-cart">
                 <section id="form">
                     {totalPrice !== 0 ? (
-                        <form className="contact-form">
-                            <div className="section-contacto__form--nombre">
-                                <label for="nombre">Nombre completo</label>
-                                <input type="text" name="nombre" id="nombre" className="shadow p-3 mb-2 bg-body rounded" /*value={name}*/ required onChange={nameChange}></input>
-                            </div>
-                            <div className="section-contacto__form--nombre">
-                                <label for="tel">Teléfono</label>
-                                <input type="tel" name="tel" id="nombre" className="shadow p-3 mb-2 bg-body rounded" /*value={phone}*/ onChange={phoneChange}></input>
-                            </div>
-                            <div className="section-contacto__form--email email">
-                                <label for="email">E-mail</label>
-                                <input type="email" name="email" id="mail" className="shadow p-3 mb-2 bg-body rounded" /*value={email}*/ required onChange={emailChange}></input>
-                            </div>
-                            <div className="order_total-date">
-                                <div className="section-contacto__form--email fecha">
-                                    <label>Fecha:</label>
-                                    <SimpleDateTime dateSeparator="-" format="DMY" showTime="0">{new Date()}</SimpleDateTime>
-                                </div>
-                                <div className="section-contacto__form--nombre order-total">
-                                    <label>Total:</label>
-                                    <p>$ {totalPrice}</p>
-                                </div>
-                            </div>
-                            <div className="section-contacto__form--borrar-enviar">
-                                <div>
-                                    <button type="reset" id="borrar" className="rounded btn-outline-dark">borrar</button>
-                                </div>
-                                <div>
-                                    <button type="submit" id="enviar" className="rounded btn-outline-dark" onClick={(e)=>orderSubmit(e)}>enviar</button>
-                                </div>
-                            </div>
-                        </form> ) : (
+
+
+                            <Form>
+
+                            <Form.Field>
+                                <label>Nombre y Apellido</label>
+                                <input placeholder='Nombre y Apellido' required onChange={nameChange}/>
+                            </Form.Field>
+
+                            <Form.Field>
+                                <label>Teléfono</label>
+                                <input placeholder='Teléfono' onChange={phoneChange} />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <label>Email</label>
+                                <input placeholder='Email' required onChange={emailChange} />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <label>Fecha:</label>
+                                <SimpleDateTime dateSeparator="-" format="DMY" showTime="0">{new Date()}</SimpleDateTime>
+                            </Form.Field>
+
+                            <Form.Field>
+                                <label>Total:</label>
+                                <p>$ {totalPrice}</p>
+                            </Form.Field>
+
+                                <Button type='submit'  onClick={(e)=>orderSubmit(e)}>Enviar </Button>
+                            </Form>
+
+                         ) : (
                             <form className="contact-form">
                                 <p>¡Orden realizada con éxito!</p>
                                 <p>Su número de compra es {order}</p>
