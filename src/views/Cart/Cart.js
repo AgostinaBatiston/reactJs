@@ -49,7 +49,9 @@ function Cart() {
                                 )}
                                 <h2 className="cart-total">TOTAL:${totalPrice.toFixed(2)}</h2>
                                 <div className="cart-checkout">
-                                    <Button className="btn">PAGAR</Button>
+                                    <Link to="/order-form">
+                                        <Button className="btn">Finalizar compra</Button>
+                                    </Link>
                                 </div>
                                 <div className="cart-buttons">
                                     <Link to="/"><Button className="btn">Seguir comprando</Button></Link>

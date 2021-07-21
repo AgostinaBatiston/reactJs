@@ -10,6 +10,7 @@ import Category from './components/Category/CategoryList'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {CartProvider} from './Context/CartContext';
 import Cart from '../src/views/Cart/Cart';
+import OrderForm from '../src/views/OrderForm/OrderForm';
 
 
 
@@ -29,8 +30,8 @@ function App() {
                
                 <Route path='/details/:id' component={Details} />
                 <Route path='/category/:id' component={Category} />
-               
                 <Route path='/cart' component={Cart} />
+                <Route path='/order-form' component={OrderForm} />
                 
                 
               </Switch>
