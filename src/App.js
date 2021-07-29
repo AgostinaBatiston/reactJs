@@ -18,7 +18,7 @@ function App() {
   
         return (
 
-          <CartProvider> 
+          <CartProvider defaultValue={[]}> 
             <Router>
             <div className="App">
               <Header />

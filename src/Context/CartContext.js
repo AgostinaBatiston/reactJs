@@ -2,8 +2,9 @@ import React, {createContext, useState} from 'react';
 
 export const CartContext = createContext();
 
-export const CartProvider = (props) => {
-	const [cart, setCart] = useState([]);
+export const CartProvider =  ({defaultValue= [], children}) => {
+
+    const [cart, setCart]= useState(defaultValue);
     const [total, setTotal] = useState(0)
 
     const addItem = (item, quantity) => {
@@ -12,9 +13,9 @@ export const CartProvider = (props) => {
             setTotal(total + quantity * item.price);
         console.log(cart);
         } else {
-            setCart([...cart,{item, quantity}])
+            setCart(cart => [...cart,{item, quantity}])
             setTotal(total + quantity * item.price);
-            console.log(cart)
+           
         }
     }
 
@@ -44,7 +45,7 @@ export const CartProvider = (props) => {
     );
     return (
         <CartContext.Provider value={{cart, addItem, clear, removeItem, totalPrice, totalQuantity}}>
-            {props.children}
+            {children}
         </CartContext.Provider>
     )
 }

@@ -7,6 +7,7 @@ import './Cart.css';
 
 function Cart() {
     const {cart, removeItem, clear, totalPrice} = useContext(CartContext);
+    
 
     return (
         <div className="div-cart">

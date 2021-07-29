@@ -8,7 +8,7 @@ import './OrderForm.css';
 
 function OrderForm() {
    
-    const {totalPrice, cart, setCart} = useContext(CartContext);
+    const {totalPrice, cart, clear} = useContext(CartContext);
     const [user, setUser] = useState({});
     const [order, setOrder] = useState('');
 
@@ -45,7 +45,7 @@ function OrderForm() {
         };
         newOrder(order);
         console.log("Hola")
-        setCart([])
+        clear([])
     };
 
     return (
