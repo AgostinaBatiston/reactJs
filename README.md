@@ -1,7 +1,7 @@
+
 # Bienvenido a Libreria Uzumaki!
 
 Esta aplicación fue desarrollada desde cero por **Agostina Batistón** para el curso de **React.js** realizado en **CoderHouse**.
-
 
 ## Como correr el proyecto
 Correr el proyecto es simple, a continuación, listo los comandos necesarios (Asumiendo que ya se tiene instalado Node, React y ya se clonó el proyecto al repositorio local desde mi [GitHub](https://github.com/AgostinaBatiston/reactJs))
@@ -27,3 +27,8 @@ Y listo, así de fácil es.
  - **Checkout** con listado de **todos los productos** y el **total de la compra**.
  - **Feedback** de la compra realizada mostrando el **orden de la compra**.
  
+ #### [Firebase](https://firebase.google.com/?hl=es-419&gclid=CjwKCAjwi9-HBhACEiwAPzUhHBUtSOn1dK1yquj6lZDd_yVaoacsvbOt_hKhL160AHLSf6jhzdg2WBoC6tAQAvD_BwE&gclsrc=aw.ds)
+ Usé firebase para enviar los pedidos a la base de datos y obtener los productos y los pedidos.
+
+#### [React-Router-Dom](https://reactrouter.com/web/guides/quick-start)
+Use React-Router-Dom para el routing de la Aplicación web. 
