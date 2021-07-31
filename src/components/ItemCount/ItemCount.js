@@ -21,7 +21,7 @@ import { Button} from 'semantic-ui-react';
                         <Button positive  onClick={handlerPlus}> + </Button>
                         
                     </div>
-                    <Button onClick={()=>onAdd(quantity)} >Comprar </Button>
+                    <Button onClick={()=>onAdd(quantity)} >Agregar al carrito </Button>
                 </div>
             </div>
         )

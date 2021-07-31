@@ -43,7 +43,10 @@ function  ProductDetail({prop}) {
                     <ItemCount stock={prop.stock} name={prop.title} onAdd={onAdd}/>
                 :   <div className="terminar-compra">
                         <p><b>Compraste {quantity} {prop.title}</b></p>
-                    <Link to={'/cart'} >< Button>Terminar compra</Button></Link>
+                    <div>
+                    <Link to={'/cart'} ><Button>Terminar compra</Button></Link>
+                    <Link to={'/'} ><Button>Seguir comprando</Button></Link>
+                    </div>
                     </div>      
                     
                 }
