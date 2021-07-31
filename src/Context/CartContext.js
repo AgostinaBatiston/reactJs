@@ -8,6 +8,7 @@ export const CartProvider =  ({defaultValue= [], children}) => {
     const [total, setTotal] = useState(0)
 
     const addItem = (item, quantity) => {
+        
         if (!inCart(item.id)) {
             cart.push({item: item, quantity: quantity});
             setTotal(total + quantity * item.price);
@@ -17,6 +18,8 @@ export const CartProvider =  ({defaultValue= [], children}) => {
             setTotal(total + quantity * item.price);
            
         }
+
+
     }
 
     const inCart = (id) => {
@@ -27,10 +30,10 @@ export const CartProvider =  ({defaultValue= [], children}) => {
         }
     }
 
-    const removeItem = () => {
-        const remove = cart.filter(item => item.id !== Number.id);
-        setCart([...remove]);
+    const removeItem = (id)=>{
+        setCart (cart.filter(({item})=> item.id !== id));
     }
+        
 
     const clear = () => {
         setCart ([]);

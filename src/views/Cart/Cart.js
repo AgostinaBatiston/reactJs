@@ -39,7 +39,7 @@ function Cart() {
                                                     <h3 className="cart-p-item">Total item: ${i.item.price * i.quantity}</h3>
                                                     </Item.Description>
                                                     <Item.Extra>
-                                                    <Label> <Button color='red' className="remove-item" onClick={removeItem}>X</Button></Label>
+                                                    <Label> <Button color='red' className="remove-item" onClick={()=>removeItem(i.item.id)}>X</Button></Label>
                                                     
                                                     </Item.Extra>
                                                 </Item.Content>
